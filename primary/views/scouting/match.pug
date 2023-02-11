@@ -15,10 +15,7 @@ block content
 		span!=msg('scouting.dynamicScrolling')
 	script.
 		// Check if the sticky bar is enabled/disabled before the page renders
-		window.stickyBarEnabled = true;
-		if (localStorage.getItem('disableStickyBar') == '1') {
-			window.stickyBarEnabled = false;
-		}
+		window.stickyBarEnabled = (localStorage.getItem('disableStickyBar') != '1');
 		$('#toggleSticky').prop('checked', window.stickyBarEnabled);
 	style.
 		/*
